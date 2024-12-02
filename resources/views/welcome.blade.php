@@ -19,12 +19,8 @@
             <button type="submit" class="btn btn-success">Generate</button>
         <h2 class="mb-3">Generated Numbers:</h2>
         <div id="result" class="fs-4 fw-bold">
-            @foreach ($numbers as $number)
-                @if (count($numbers) <= (count($numbers)-1))
-                    {{ $number }}    
-                @else
-                    {{ $number }},
-                @endif
+            @foreach ($numbers as $index => $number)
+                {{$number}}@if ($index < count($numbers) - 1), @endif
             @endforeach
     </div>
     </div>
