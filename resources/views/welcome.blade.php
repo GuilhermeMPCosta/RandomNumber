@@ -19,9 +19,13 @@
             <button type="submit" class="btn btn-success">Generate</button>
         <h2 class="mb-3">Generated Numbers:</h2>
         <div id="result" class="fs-4 fw-bold">
-            @foreach ($numbers as $index => $number)
-                {{$number}}@if ($index < count($numbers) - 1), @endif
-            @endforeach
+            @if (count($numbers) > 0)
+                @foreach ($numbers as $index => $number)
+                    {{ $number }}@if ($index < count($numbers) - 1), @endif
+                @endforeach
+            @else
+                <p>Nehum numero gerado.</p>
+            @endif
     </div>
     </div>
     </form>
